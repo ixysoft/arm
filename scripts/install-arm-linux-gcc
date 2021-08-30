@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "安装gcc-arm-linux"
+sudo apt install gcc-arm-linux-gnueabihf
+sudo apt install qemu
+# qemu-arm用到
+echo "安装qemu-arm依赖软件"
+sudo apt install qemu-user
+# gdb工具
+echo "安装gdb工具"
+sudo apt install gdb-multiarch
+# 将链接库添加到指定位置,否则代码执行时会报找不到动态链接库的错误
+echo "创建arm libc链接"
+sudo ln -s /usr/arm-linux-gnueabihf/lib/libc.so.6 /lib/libc.so.6
+echo "创建arm ld链接"
+sudo ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /lib/ld-linux-armhf.so.3
