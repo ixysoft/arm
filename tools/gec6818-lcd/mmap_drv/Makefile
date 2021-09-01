@@ -4,6 +4,6 @@ PWD := $(shell pwd)
 all:
 	make -C $(KERNEL_DIR) M=$(PWD) modules
 install:
-	[ ! -x /dev/ubuntu_lcd ] && sudo insmod mmp_drv.ko && chmod 666 /dev/ubuntu_lcd 
+	sudo insmod mmp_drv.ko && sudo chmod 666 /dev/ubuntu_lcd 
 clean:
 	rm *.o *.ko *.mod.c

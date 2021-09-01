@@ -5,6 +5,6 @@ all:
 	make -C $(KERNEL_DIR) M=$(PWD) modules
 
 install:
-	[ ! -x /dev/ubuntu_event ] && sudo insmod event_drv.ko && sudo chmod 666 /dev/ubuntu_event || echo 123
+	sudo insmod event_drv.ko && sudo chmod 666 /dev/ubuntu_event
 clean:
 	rm *.o *.ko *.mod.c
