@@ -1,0 +1,2 @@
+链接静态库编译:
+gcc -o example example.c -l:libjpeg.a 
